@@ -17,17 +17,28 @@ void ListCtor(struct list_t* list)
 
     list->head = 1;
     list->tail = 1;
+    list->curr = 1;
+
+    list->dump = fopen(DUMP, "w+");
+
+    assert(list->dump);
 
     list->data[0] = POISON;
 
     FillingListPoison(list);
+
+    list->prev[1] = 0;
 }
 
 void ListDtor(struct list_t* list)
 {
+    assert(list->dump);
+
     free(list->data);
     free(list->next);
     free(list->prev);
+
+    fclose(list->dump);
 
     list->head = 1;
     list->tail = 1;
@@ -35,7 +46,7 @@ void ListDtor(struct list_t* list)
 
 void FillingListPoison(struct list_t* list)
 {
-    for (int i = 1; i <= SIZE; i++)
+    for (int i = 1; i < SIZE; i++)
     {
         list->next[i] = INVALID_ADDR;
         list->prev[i] = INVALID_ADDR;

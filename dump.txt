@@ -1,0 +1,175 @@
+
+               1 dump
+anchor     = 1
+func call  = ListPush
+list->curr = 1
+list->head = 1
+list->tail = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    0  -1  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 2 dump
+anchor     = 1
+func call  = ListPush
+list->curr = 2
+list->head = 1
+list->tail = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    0   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0   0   1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+               1 dump
+anchor     = 2
+func call  = ListPush
+list->curr = 2
+list->head = 1
+list->tail = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    0   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0   0   1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 2 dump
+anchor     = 2
+func call  = ListPush
+list->curr = 3
+list->head = 1
+list->tail = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    0   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    0   0   1   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+               1 dump
+anchor     = 3
+func call  = ListPush
+list->curr = 3
+list->head = 1
+list->tail = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30   0   0   0   0   0   0
+next:    0   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    0   0   1   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 2 dump
+anchor     = 3
+func call  = ListPush
+list->curr = 4
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30   0   0   0   0   0   0
+next:    0   2   3   0  -1  -1  -1  -1  -1  -1
+prev:    0   0   1   2   3  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+               1 dump
+anchor     = 2
+func call  = ListPush
+list->curr = 4
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30  40   0   0   0   0   0
+next:    0   2   3   0  -1  -1  -1  -1  -1  -1
+prev:    0   0   1   2   3  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 2 dump
+anchor     = 2
+func call  = ListPush
+list->curr = 5
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30  40   0   0   0   0   0
+next:    0   2   3   4   0  -1  -1  -1  -1  -1
+prev:    0   0   1   4   3  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+               1 dump
+anchor     = 1
+func call  = ListPush
+list->curr = 5
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30  40  50   0   0   0   0
+next:    0   2   3   4   0  -1  -1  -1  -1  -1
+prev:    0   0   1   4   3  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 2 dump
+anchor     = 1
+func call  = ListPush
+list->curr = 6
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30  40  50   0   0   0   0
+next:    0   2   5   4   0   3  -1  -1  -1  -1
+prev:    0   0   1   4   3   1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+
+                 last dump from main
+func call  = main
+list->curr = 6
+list->head = 1
+list->tail = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20  30  40  50   0   0   0   0
+next:    0   2   5   4   0   3  -1  -1  -1  -1
+prev:    0   0   1   4   3   1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+

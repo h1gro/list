@@ -6,8 +6,8 @@ flags = -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop
 
 list: list
 
-list: main.o PushPop.o C_Dtors.o Checks.o
-	g++ main.o PushPop.o C_Dtors.o Checks.o $(flags) -o lists
+list: main.o PushPop.o C_Dtors.o Checks.o ListDump.o
+	g++ main.o PushPop.o C_Dtors.o Checks.o ListDump.o $(flags) -o list
 
 main.o: main.cpp
 	g++ -c $(flags) main.cpp
@@ -20,6 +20,9 @@ C_Dtors.o: C_Dtors.cpp
 
 Checks.o: Checks.cpp
 	g++ -c $(flags) Checks.cpp
+
+ListDump.o: ListDump.cpp
+	g++ -c $(flags) ListDump.cpp
 
 #-------------------------------------------------------------------------------------------------------#
 

@@ -1,9 +1,17 @@
 #include <stdio.h>
 
+// TODO: Сделай названия файлов в одном стиле
+// TODO: Сделай один header "List.h", в котором будут определяться:
+//           - Структура списка
+//           - Функции списка
+//           - Константы
+//       Функции дампа оставь в отдельном файле
 #include "general.h"
 #include "C_Dtor.h"
 #include "PushPop.h"
 #include "ListDump.h"
+
+// TODO: В гите не должно быть бинарных файлов (list) и логов
 
 int main()
 {
@@ -22,4 +30,5 @@ int main()
     ListDump(&list);
 
     ListDtor(&list);
+    // TODO: return ??? 
 }

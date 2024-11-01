@@ -4,6 +4,8 @@
 #include "general.h"
 #include "PushPop.h"
 #include "Checks.h"
+
+// TODO: Header не используется
 #include "C_Dtor.h"
 #include "ListDump.h"
 
@@ -32,6 +34,7 @@ void ListPush(struct list_t* list, int elem, int anchor)
 
     list->data[list->curr] = elem;
 
+    // TODO: Убери пасту
     fprintf(list->dump, "\n               1 dump\n");
     fprintf(list->dump, "anchor     = %d\n", anchor);
 
@@ -56,6 +59,7 @@ void ListPop(struct list_t* list)
     ListChecks(list);
 }
 
+// TODO: Что такое Seel?
 int FindFreeSeel(int* array)
 {
     for(int i = 1; i < SIZE; i++)
@@ -105,6 +109,7 @@ void IndexSwap(struct list_t* list, int anchor)
         3. что если якорная позиция > адреса последнего элемента, двигать якорь
         к последнему элементу или оставлять его без связи с другими элементами
         */   //якорь элемента может быть > адреса последнего элемента
+        // TODO: Напиши вопросы Андрею в ВК и перечитай лекцию
         list->tail = free_seel_next;
     }
 

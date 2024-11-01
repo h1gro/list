@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include <assert.h>
+
+// TODO: Header не используется
+#include <assert.h>  
 
 #include "general.h"
 #include "Checks.h"
-#include "C_Dtor.h"
+
+// TODO: Header не используется
+#include "C_Dtor.h" 
 
 void ListChecks(struct list_t* list)
 {

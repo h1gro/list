@@ -1,7 +1,7 @@
 
                1 dump
-anchor     = 1
 func call  = ListPush
+anchor     = 1
 list->curr = 1
 list->head = 1
 list->tail = 1
@@ -16,8 +16,8 @@ prev:    0   0  -1  -1  -1  -1  -1  -1  -1  -1
 
 
                  2 dump
-anchor     = 1
 func call  = ListPush
+anchor     = 1
 list->curr = 2
 list->head = 1
 list->tail = 1
@@ -32,8 +32,8 @@ prev:    0   0   1  -1  -1  -1  -1  -1  -1  -1
 
 
                1 dump
-anchor     = 2
 func call  = ListPush
+anchor     = 2
 list->curr = 2
 list->head = 1
 list->tail = 1
@@ -48,8 +48,8 @@ prev:    0   0   1  -1  -1  -1  -1  -1  -1  -1
 
 
                  2 dump
-anchor     = 2
 func call  = ListPush
+anchor     = 2
 list->curr = 3
 list->head = 1
 list->tail = 2
@@ -64,8 +64,8 @@ prev:    0   0   1   2  -1  -1  -1  -1  -1  -1
 
 
                1 dump
-anchor     = 3
 func call  = ListPush
+anchor     = 3
 list->curr = 3
 list->head = 1
 list->tail = 2
@@ -80,8 +80,8 @@ prev:    0   0   1   2  -1  -1  -1  -1  -1  -1
 
 
                  2 dump
-anchor     = 3
 func call  = ListPush
+anchor     = 3
 list->curr = 4
 list->head = 1
 list->tail = 3
@@ -96,8 +96,8 @@ prev:    0   0   1   2   3  -1  -1  -1  -1  -1
 
 
                1 dump
-anchor     = 2
 func call  = ListPush
+anchor     = 2
 list->curr = 4
 list->head = 1
 list->tail = 3
@@ -112,8 +112,8 @@ prev:    0   0   1   2   3  -1  -1  -1  -1  -1
 
 
                  2 dump
-anchor     = 2
 func call  = ListPush
+anchor     = 2
 list->curr = 5
 list->head = 1
 list->tail = 3
@@ -128,8 +128,8 @@ prev:    0   0   1   4   3  -1  -1  -1  -1  -1
 
 
                1 dump
-anchor     = 1
 func call  = ListPush
+anchor     = 1
 list->curr = 5
 list->head = 1
 list->tail = 3
@@ -144,8 +144,8 @@ prev:    0   0   1   4   3  -1  -1  -1  -1  -1
 
 
                  2 dump
-anchor     = 1
 func call  = ListPush
+anchor     = 1
 list->curr = 6
 list->head = 1
 list->tail = 3
@@ -158,9 +158,8 @@ prev:    0   0   1   4   3   1  -1  -1  -1  -1
 
 <<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
 
-
-                 last dump from main
 func call  = main
+anchor     = 1
 list->curr = 6
 list->head = 1
 list->tail = 3

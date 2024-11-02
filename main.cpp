@@ -1,12 +1,10 @@
-#include <stdio.h>
-
 // TODO: Сделай названия файлов в одном стиле
 // TODO: Сделай один header "List.h", в котором будут определяться:
 //           - Структура списка
 //           - Функции списка
 //           - Константы
 //       Функции дампа оставь в отдельном файле
-#include "general.h"
+#include "List.h"
 #include "C_Dtor.h"
 #include "PushPop.h"
 #include "ListDump.h"
@@ -25,10 +23,9 @@ int main()
     ListPush(&list, 40, 2);
     ListPush(&list, 50, 1);
 
-    fprintf(list.dump, "\n                 last dump from main\n");
     list.func_call = __func__;
     ListDump(&list);
 
     ListDtor(&list);
-    // TODO: return ??? 
+    return 0;
 }

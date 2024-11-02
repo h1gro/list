@@ -1,17 +1,9 @@
-#include <stdio.h>
-
-// TODO: Header не используется
-#include <assert.h>  
-
-#include "general.h"
+#include "List.h"
 #include "Checks.h"
-
-// TODO: Header не используется
-#include "C_Dtor.h" 
 
 void ListChecks(struct list_t* list)
 {
-    if (list->head == SIZE)
+    if (list->head == LIST_SIZE)
     {
         printf("user eblan, head == SIZE\n");
     }

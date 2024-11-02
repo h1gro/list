@@ -1,32 +1,32 @@
-#include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
 
-#include "general.h"
+#include "List.h"
 #include "C_Dtor.h"
 
 void ListCtor(struct list_t* list)
 {
-    // TODO: assert(list)?
-    list->data = (int*) calloc(SIZE, sizeof(int)); 
-    list->next = (int*) calloc(SIZE, sizeof(int)); 
-    list->prev = (int*) calloc(SIZE, sizeof(int)); 
+    assert(list);
 
-    assert(list->data); 
-    assert(list->next); 
-    assert(list->prev); 
+    list->data = (int*) calloc(LIST_SIZE, sizeof(int));
+    list->next = (int*) calloc(LIST_SIZE, sizeof(int));
+    list->prev = (int*) calloc(LIST_SIZE, sizeof(int));
+
+    assert(list->data);
+    assert(list->next);
+    assert(list->prev);
 
     list->head = 1;
     list->tail = 1;
     list->curr = 1;
 
-    list->dump = fopen(DUMP, "w+"); // TODO: Почему w+ вместо w?
+    list->dump = fopen(DUMP, "w+");
 
-    assert(list->dump); 
+    assert(list->dump);
 
     list->data[0] = POISON;
 
-    FillingListPoison(list);
+    FillingNextPrevPoison(list);
 
     list->prev[1] = 0;
 }
@@ -39,17 +39,22 @@ void ListDtor(struct list_t* list)
     free(list->next);
     free(list->prev);
 
-    fclose(list->dump); // TODO: Проверь возвращаемое значение fclose
+    int fclose_return = fclose(list->dump);
+
+    if (fclose_return != 0)
+    {
+        printf("fclose_return = %d\n", fclose_return);
+    }
 
     list->head = 1;
     list->tail = 1;
 }
 
-void FillingListPoison(struct list_t* list)
+void FillingNextPrevPoison(struct list_t* list)
 {
-    for (int i = 1; i < SIZE; i++)
+    for (size_t i = 1; i < LIST_SIZE; i++)
     {
         list->next[i] = INVALID_ADDR;
-        list->prev[i] = INVALID_ADDR; // TODO: Добавь POISON для data
+        list->prev[i] = INVALID_ADDR;
     }
 }

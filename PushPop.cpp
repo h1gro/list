@@ -1,12 +1,8 @@
-#include <stdio.h>
 #include <assert.h>
 
-#include "general.h"
+#include "List.h"
 #include "PushPop.h"
 #include "Checks.h"
-
-// TODO: Header не используется
-#include "C_Dtor.h"
 #include "ListDump.h"
 
 void ListPush(struct list_t* list, int elem, int anchor)
@@ -15,6 +11,7 @@ void ListPush(struct list_t* list, int elem, int anchor)
     assert(list->head > 0);
     assert(list->tail > 0);
 
+    list->anchor    = anchor;
     list->func_call = __func__;
 
     if (anchor <= 0)
@@ -34,9 +31,7 @@ void ListPush(struct list_t* list, int elem, int anchor)
 
     list->data[list->curr] = elem;
 
-    // TODO: Убери пасту
     fprintf(list->dump, "\n               1 dump\n");
-    fprintf(list->dump, "anchor     = %d\n", anchor);
 
     ListDump(list);
 
@@ -47,7 +42,6 @@ void ListPush(struct list_t* list, int elem, int anchor)
     ListChecks(list);
 
     fprintf(list->dump, "\n                 2 dump\n");
-    fprintf(list->dump, "anchor     = %d\n", anchor);
     ListDump(list);
 }
 
@@ -59,10 +53,9 @@ void ListPop(struct list_t* list)
     ListChecks(list);
 }
 
-// TODO: Что такое Seel?
-int FindFreeSeel(int* array)
+int FindFreeСeel(int* array)
 {
-    for(int i = 1; i < SIZE; i++)
+    for(int i = 1; i < LIST_SIZE; i++)
     {
         if (array[i] == INVALID_ADDR)
         {
@@ -84,7 +77,7 @@ void IndexSwap(struct list_t* list, int anchor)
 
     if (anchor != list->curr)
     {
-        free_seel_next = FindFreeSeel(list->next);
+        free_seel_next = FindFreeСeel(list->next);
 
         list->next[free_seel_next]  = list->next[anchor + 1];
         list->next[anchor + 1] = free_seel_next;
@@ -92,7 +85,7 @@ void IndexSwap(struct list_t* list, int anchor)
 
     else
     {
-        free_seel_next = FindFreeSeel(list->next);
+        free_seel_next = FindFreeСeel(list->next);
 
         list->next[anchor] = 0;
 
@@ -118,7 +111,7 @@ void IndexSwap(struct list_t* list, int anchor)
         printf("FREE SEEL DID NOT FIND\n");
     }
 
-    free_seel_prev = FindFreeSeel(list->prev);
+    free_seel_prev = FindFreeСeel(list->prev);
 
     if (free_seel_prev == list->curr)
     {

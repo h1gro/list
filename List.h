@@ -5,9 +5,9 @@
 
 static const char* DUMP = "dump.txt";
 
-const size_t LIST_SIZE = 10;
-const int POISON       = -153;
-const int INVALID_ADDR = -1;
+const size_t LIST_SIZE    = 10;
+const int INVALID_ADDR    = -1;
+const int POISON          = -153;
 
 struct list_t
 {
@@ -28,5 +28,10 @@ enum funсtions_calls
     PUSH = 2,
     POP  = 3,
 };
+
+void ListCtor(struct list_t* list);
+void ListDtor(struct list_t* list);
+void FillingNextPrevPoison(struct list_t* list);
+void ListChecks(struct list_t* list);
 
 #endif

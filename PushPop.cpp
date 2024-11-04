@@ -2,7 +2,6 @@
 
 #include "List.h"
 #include "PushPop.h"
-#include "Checks.h"
 #include "ListDump.h"
 
 void ListPush(struct list_t* list, int elem, int anchor)
@@ -102,7 +101,6 @@ void IndexSwap(struct list_t* list, int anchor)
         3. что если якорная позиция > адреса последнего элемента, двигать якорь
         к последнему элементу или оставлять его без связи с другими элементами
         */   //якорь элемента может быть > адреса последнего элемента
-        // TODO: Напиши вопросы Андрею в ВК и перечитай лекцию
         list->tail = free_seel_next;
     }
 

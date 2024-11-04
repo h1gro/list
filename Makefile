@@ -13,21 +13,21 @@ flags = -D _DEBUG -ggdb3 -std=c++17 -O0 -Wall -Wextra -Weffc++ -Waggressive-loop
 
 #-------------------------------------------------------------------------------------------------------#
 
-all: list clean
+all: compile_list clean
 
 #-------------------------------------------------------------------------------------------------------#
 
-list: main.o PushPop.o C_Dtors.o Checks.o ListDump.o
-	g++ main.o PushPop.o C_Dtors.o Checks.o ListDump.o $(flags) -o list
+compile_list: Main.o PushPop.o Constructor.o Checks.o ListDump.o
+	g++ Main.o PushPop.o Constructor.o Checks.o ListDump.o $(flags) -o list
 
-main.o: main.cpp
-	g++ -c $(flags) main.cpp
+Main.o: Main.cpp
+	g++ -c $(flags) Main.cpp
 
 PushPop.o: PushPop.cpp
 	g++ -c $(flags) PushPop.cpp
 
-C_Dtors.o: C_Dtors.cpp
-	g++ -c $(flags) C_Dtors.cpp
+Constructor.o: Constructor.cpp
+	g++ -c $(flags) Constructor.cpp
 
 Checks.o: Checks.cpp
 	g++ -c $(flags) Checks.cpp
@@ -37,7 +37,10 @@ ListDump.o: ListDump.cpp
 
 #-------------------------------------------------------------------------------------------------------#
 
-# TODO: У тебя создается исполняемый файл list (без расширения),
-#       соответственно твой make clean не удаляет его
 clean:
 	rm -rf *.o *.exe *.exe.log *.exe.log.dmp
+
+#-------------------------------------------------------------------------------------------------------#
+
+run:
+	./list && rm -rf list

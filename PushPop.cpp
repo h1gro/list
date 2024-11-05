@@ -30,7 +30,7 @@ void ListPush(struct list_t* list, int elem, int anchor)
 
     list->data[list->curr] = elem;
 
-    fprintf(list->dump, "\n               1 dump\n");
+    //fprintf(list->dump, "\n               1 dump\n");
 
     ListDump(list);
 
@@ -40,7 +40,7 @@ void ListPush(struct list_t* list, int elem, int anchor)
 
     ListChecks(list);
 
-    fprintf(list->dump, "\n                 2 dump\n");
+    //fprintf(list->dump, "\n                 2 dump\n");
     ListDump(list);
 }
 

@@ -22,13 +22,6 @@ struct list_t
     const char* func_call;
 };
 
-enum funсtions_calls
-{
-    MAIN = 1,
-    PUSH = 2,
-    POP  = 3,
-};
-
 void ListCtor(struct list_t* list);
 void ListDtor(struct list_t* list);
 void FillingNextPrevPoison(struct list_t* list);

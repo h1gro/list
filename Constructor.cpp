@@ -15,19 +15,19 @@ void ListCtor(struct list_t* list)
     assert(list->next);
     assert(list->prev);
 
-    list->head = 1;
-    list->tail = 1;
-    list->curr = 1;
-
     list->dump = fopen(DUMP, "w+");
 
     assert(list->dump);
 
     list->data[0] = POISON;
+    list->next[0] = 0;
+    list->prev[0] = 0;
+    list->free    = 1;
 
     FillingNextPrevPoison(list);
 
-    list->prev[1] = 0;
+    list->dump_html = fopen(DUMP_HTML, "w");
+    assert(list->dump_html);
 }
 
 void ListDtor(struct list_t* list)
@@ -45,8 +45,7 @@ void ListDtor(struct list_t* list)
         printf("fclose_return = %d\n", fclose_return);
     }
 
-    list->head = 1;
-    list->tail = 1;
+    fclose(list->dump_html);
 }
 
 void FillingNextPrevPoison(struct list_t* list)

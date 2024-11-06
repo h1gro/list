@@ -7,52 +7,85 @@
 void ListPush(struct list_t* list, int elem, int anchor)
 {
     assert(list);
-    assert(list->head > 0);
-    assert(list->tail > 0);
 
-    list->anchor    = anchor;
-    list->func_call = __func__;
+    list->anchor = anchor;
 
-    if (anchor <= 0)
-    {
-        printf("anchor position is invalid\n");
-    }
+    ListDump(list, anchor, __LINE__, "i smotry goluy list");
 
-    if (list->head > anchor)
-    {
-        list->head = list->curr;
-    }
 
-    if (list->curr < anchor)
-    {
-        list->tail = anchor;
-    }
+    list->data[list->free] = elem;
 
-    list->data[list->curr] = elem;
+    ListDump(list, anchor, __LINE__, "i clady element");
 
-    //fprintf(list->dump, "\n               1 dump\n");
 
-    ListDump(list);
+    list->prev[list->free] = list->next[anchor];
+    printf("prev[free] = %d\n", list->prev[list->free]);
+    ListDump(list, anchor, __LINE__, "i prisvayvau addr previous elem in mass prev");
 
-    IndexSwap(list, anchor);
 
-    list->curr++;
+    list->next[list->prev[list->free]] = list->free;
 
-    ListChecks(list);
+    ListDump(list, anchor, __LINE__, "i prisvayvau addr next elem in mass next");
 
-    //fprintf(list->dump, "\n                 2 dump\n");
-    ListDump(list);
+
+    list->next[anchor]     = list->free;
+
+    ListDump(list, anchor, __LINE__, "i prisvayvau int addr anchor in mass next free ceel");
+
+
+    anchor = list->free;
+
+    list->free = FindFreeCeel(list->next);
+
+    list->next[anchor]     = list->free;
+
+    ListDump(list, anchor, __LINE__, "i prisvayvau int addr anchor in mass next free ceel after FINDFREECEEL");
+
+    // list->next[free_ceel_next] = list->free;
+    // list->prev[list->next[free_ceel_next]] = free_ceel_next;
+
+//     list->anchor    = anchor;
+//     list->func_call = __func__;
+//
+//     if (anchor <= 0)
+//     {
+//         printf("anchor position is invalid\n");
+//     }
+//
+//     if (list->head > anchor)
+//     {
+//         list->head = list->curr;
+//     }
+//
+//     if (list->curr < anchor)
+//     {
+//         list->tail = anchor;
+//     }
+//
+//     list->data[list->curr] = elem;
+//
+//     //fprintf(list->dump, "\n               1 dump\n");
+//
+//     ListDump(list);
+//
+//     IndexSwap(list, anchor);
+//
+//     list->curr++;
+//
+//     ListChecks(list);
+//
+//     //fprintf(list->dump, "\n                 2 dump\n");
+//     ListDump(list);
 }
 
 void ListPop(struct list_t* list)
 {
     assert(list);
-    assert(list->tail > 0);
 
     ListChecks(list);
 }
 
-int FindFreeСeel(int* array)
+int FindFreeCeel(int* array)
 {
     for(int i = 1; i < LIST_SIZE; i++)
     {
@@ -65,61 +98,61 @@ int FindFreeСeel(int* array)
     return ERROR_FREE_SEEL;
 }
 
-void IndexSwap(struct list_t* list, int anchor)
-{
-    assert(list);
-    assert(list->next);
-    assert(list->prev);
-    assert(list->curr > 0);
-
-    int free_seel_next = 0, free_seel_prev = 0;
-
-    if (anchor != list->curr)
-    {
-        free_seel_next = FindFreeСeel(list->next);
-
-        list->next[free_seel_next]  = list->next[anchor + 1];
-        list->next[anchor + 1] = free_seel_next;
-    }
-
-    else
-    {
-        free_seel_next = FindFreeСeel(list->next);
-
-        list->next[anchor] = 0;
-
-        if (list->curr != 1)
-        {
-            list->next[list->curr - 1] = anchor;
-        }
-
-        /* вопросы:
-        1. curr? мы идём по head или нет? // функция поиска свободной ячейки определеяет в какую ячейку класть новый элемент (LIST_CURR НЕ НУЖЕН?)
-
-        2. push якорной позиции осуществляет либо до нее либо после, а как добавлять в 1? // ЯКОРЬ = 0!!!!
-
-        3. что если якорная позиция > адреса последнего элемента, двигать якорь
-        к последнему элементу или оставлять его без связи с другими элементами
-        */   //якорь элемента может быть > адреса последнего элемента
-        list->tail = free_seel_next;
-    }
-
-    if (free_seel_next == ERROR_FREE_SEEL ||free_seel_prev == ERROR_FREE_SEEL)
-    {
-        printf("FREE SEEL DID NOT FIND\n");
-    }
-
-    free_seel_prev = FindFreeСeel(list->prev);
-
-    if (free_seel_prev == list->curr)
-    {
-        list->prev[free_seel_prev] = anchor;
-    }
-
-    else
-    {
-        list->prev[anchor + 1] = list->curr;
-    }
-}
+// void IndexSwap(struct list_t* list, int anchor)
+// {
+//     assert(list);
+//     assert(list->next);
+//     assert(list->prev);
+//     assert(list->curr > 0);
+//
+//     int free_seel_next = 0, free_seel_prev = 0;
+//
+//     if (anchor != list->curr)
+//     {
+//         free_seel_next = FindFreeCeel(list->next);
+//
+//         list->next[free_seel_next]  = list->next[anchor + 1];
+//         list->next[anchor + 1] = free_seel_next;
+//     }
+//
+//     else
+//     {
+//         free_seel_next = FindFreeCeel(list->next);
+//
+//         list->next[anchor] = 0;
+//
+//         if (list->curr != 1)
+//         {
+//             list->next[list->curr - 1] = anchor;
+//         }
+//
+//         /* вопросы:
+//         1. curr? мы идём по head или нет? // функция поиска свободной ячейки определеяет в какую ячейку класть новый элемент (LIST_CURR НЕ НУЖЕН?)
+//
+//         2. push якорной позиции осуществляет либо до нее либо после, а как добавлять в 1? // ЯКОРЬ = 0!!!!
+//
+//         3. что если якорная позиция > адреса последнего элемента, двигать якорь
+//         к последнему элементу или оставлять его без связи с другими элементами
+//         */   //якорь элемента может быть > адреса последнего элемента
+//         list->tail = free_seel_next;
+//     }
+//
+//     if (free_seel_next == ERROR_FREE_SEEL ||free_seel_prev == ERROR_FREE_SEEL)
+//     {
+//         printf("FREE SEEL DID NOT FIND\n");
+//     }
+//
+//     free_seel_prev = FindFreeCeel(list->prev);
+//
+//     if (free_seel_prev == list->curr)
+//     {
+//         list->prev[free_seel_prev] = anchor;
+//     }
+//
+//     else
+//     {
+//         list->prev[anchor + 1] = list->curr;
+//     }
+// }
 
 

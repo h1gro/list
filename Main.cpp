@@ -8,14 +8,12 @@ int main()
 
     ListCtor(&list);
 
-    ListPush(&list, 10, 1);
-    ListPush(&list, 20, 2);
-    ListPush(&list, 30, 3);
-    ListPush(&list, 40, 4);
-
-    list.func_call = __func__;
-    ListDump(&list);
+    ListPush(&list, 10, 0);
+    ListPush(&list, 20, 1);
 
     ListDtor(&list);
+
+    //FILE* dump_html = fopen(DUMP_HTML, "w");
+    //fclose(dump_html);
     return 0;
 }

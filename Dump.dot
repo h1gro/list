@@ -5,12 +5,12 @@ digraph G
     node[color = blue, fontsize = 14];
     edge[color = black, fontsize = 12];
 
-    0 [shape = Mrecord, label = "index    0 | data -153 | next    0 | prev    0"];
-    1 [shape = Mrecord, label = "index    1 | data   10 | next    2 | prev    0"];
-    2 [shape = Mrecord, label = "index    2 | data   20 | next    3 | prev    1"];
-    3 [shape = Mrecord, label = "index    3 | data   30 | next    4 | prev    2"];
-    4 [shape = Mrecord, label = "index    4 | data   40 | next    0 | prev    3"];
-    5 [shape = Mrecord, label = "index    5 | data    0 | next   -1 | prev    4"];
+    0 [shape = Mrecord, label = "index    0 | data -153 | next    1 | prev    0"];
+    1 [shape = Mrecord, label = "index    1 | data   20 | next    2 | prev    1"];
+    2 [shape = Mrecord, label = "index    2 | data    0 | next   -1 | prev   -1"];
+    3 [shape = Mrecord, label = "index    3 | data    0 | next   -1 | prev   -1"];
+    4 [shape = Mrecord, label = "index    4 | data    0 | next   -1 | prev   -1"];
+    5 [shape = Mrecord, label = "index    5 | data    0 | next   -1 | prev   -1"];
     6 [shape = Mrecord, label = "index    6 | data    0 | next   -1 | prev   -1"];
     7 [shape = Mrecord, label = "index    7 | data    0 | next   -1 | prev   -1"];
     8 [shape = Mrecord, label = "index    8 | data    0 | next   -1 | prev   -1"];
@@ -18,20 +18,13 @@ digraph G
 
     0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 [weight = 100000, color = "pink2"];
 
-    label = "Dump was called from main, list_size = 10, head = 1, tail = 4.";
+    label = "Dump was called from func (null) in line 42, list_size = 10, list_free = 2, list_anchor = 1, command: i prisvayvau int addr anchor in mass next free ceel after FINDFREECEEL";
 
     /*next nods:*/ 
-    0 -> 0 [color = "red1"];
+    0 -> 1 [color = "red1"];
     1 -> 2 [color = "red1"];
-    2 -> 3 [color = "red1"];
-    3 -> 4 [color = "red1"];
-    4 -> 0 [color = "red1"];
 
     /*prev nods:*/ 
     0 -> 0 [color = "orange"];
-    0 -> 1 [color = "orange"];
-    1 -> 2 [color = "orange"];
-    2 -> 3 [color = "orange"];
-    3 -> 4 [color = "orange"];
-    4 -> 5 [color = "orange"];
+    1 -> 1 [color = "orange"];
 }

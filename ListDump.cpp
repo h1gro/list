@@ -4,33 +4,46 @@
 #include "List.h"
 #include "ListDump.h"
 
-const char* SHIFT = "      ";
+const char* SHIFT      = "      ";
 const char* DUMP_GRAPH = "Dump.dot";
 
-void ListDump(struct list_t* list)
+void ListDump(struct list_t* list, int anchor, int line, const char* str)
 {
     assert(list);
     assert(list->data);
     assert(list->next);
     assert(list->prev);
-    assert(list->head > 0);
-    assert(list->tail > 0);
+    //assert(list->head > 0);
+    //assert(list->tail > 0);
     assert(list->dump);
 
-    FILE* graph = fopen(DUMP_GRAPH, "w+");
+    FILE* graph = fopen(DUMP_GRAPH, "w");
 
     assert(graph);
 
     PrintGraphHead(graph);
 
-    PrintDefaultList(graph, list);
+    PrintDefaultList(graph, list, line, str);
 
     PrintListChanges(graph, list);
 
     fprintf(graph, "}\n");
     fclose(graph);
 
-    PrintListInfInFile(list);
+    static int number_dump = 0;
+    MySystem("dot Dump.dot -Tpng -o Graphs/Dump%03d.png", number_dump);
+
+    if (number_dump == 0)
+    {
+        fprintf(list->dump_html, "<pre>\n");
+    }
+
+    fprintf(list->dump_html, "\n<img src = \"Graphs/Dump%03d.png\"/>\n", number_dump);
+    number_dump++;
+
+
+
+    PrintListInfInFile(list, anchor);
 
     fprintf(list->dump, SHIFT);
     for (size_t i = 0; i < LIST_SIZE; i++)
@@ -60,17 +73,14 @@ void PrintArrayInFile(int* array, struct list_t* list)
     fprintf(list->dump, "\n");
 }
 
-void PrintListInfInFile(struct list_t* list)
+void PrintListInfInFile(struct list_t* list, int anchor)
 {
     assert(list);
     assert(list->dump);
-    assert((list->anchor >= 0) && (list->curr > 0) && (list->head > 0) && (list->tail > 0));
 
     fprintf(list->dump, "func call  = %s\n", list->func_call);
-    fprintf(list->dump, "anchor     = %d\n", list->anchor);
-    fprintf(list->dump, "list->curr = %d\n", list->curr);
-    fprintf(list->dump, "list->head = %d\n", list->head);
-    fprintf(list->dump, "list->tail = %d\n", list->tail);
+    fprintf(list->dump, "anchor     = %d\n", anchor);
+    fprintf(list->dump, "list->free = %d\n", list->free);
     fprintf(list->dump, "list size  = %lu\n\n", LIST_SIZE);
 }
 
@@ -83,13 +93,15 @@ void PrintGraphHead(FILE* graph)
     fprintf(graph, "    edge[color = black, fontsize = 12];\n\n");
 }
 
-void PrintDefaultList(FILE* graph, struct list_t* list)
+void PrintDefaultList(FILE* graph, struct list_t* list, int line, const char* str)
 {
     assert(graph);
     assert(list);
     assert(list->data);
     assert(list->next);
     assert(list->prev);
+    assert(line);
+    assert(str);
 
     for (size_t i = 0; i < LIST_SIZE; i++)
     {
@@ -104,7 +116,7 @@ void PrintDefaultList(FILE* graph, struct list_t* list)
     }
     fprintf(graph, " [weight = 100000, color = \"pink2\"];\n");
 
-    fprintf(graph, "\n    label = \"Dump was called from %s, list_size = %lu, head = %d, tail = %d.\";\n", list->func_call, LIST_SIZE, list->head, list->tail);
+    fprintf(graph, "\n    label = \"Dump was called from func %s in line %d, list_size = %lu, list_free = %d, list_anchor = %d, command: %s\";\n", list->func_call, line, LIST_SIZE, list->free, list->anchor, str);
 }
 
 void PrintListChanges(FILE* graph, struct list_t* list)
@@ -127,3 +139,13 @@ void PrintListChanges(FILE* graph, struct list_t* list)
         }
     }
 }
+
+void MySystem(const char* str, int number_dump)
+{
+    char command_dot[52] = "";
+
+    sprintf(command_dot, str, number_dump);
+
+    system(command_dot);
+}
+

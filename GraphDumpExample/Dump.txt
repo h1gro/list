@@ -1,0 +1,420 @@
+func call  = ListPush
+anchor     = 0
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    0  -1  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0  -1  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 0
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    0   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0  -1  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 0
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    0  -1  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 0
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    1  -1  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 0
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10   0   0   0   0   0   0   0   0
+next:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+prev:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    1   0   0  -1  -1  -1  -1  -1  -1  -1
+prev:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    1   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    1   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    1   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0  -1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  10  20   0   0   0   0   0   0   0
+next:    1   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0   1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20   0   0   0   0   0   0   0
+next:    1   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0   1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20   0   0   0   0   0   0   0
+next:    2   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0   1  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20   0   0   0   0   0   0   0
+next:    2   2   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20   0   0   0   0   0   0   0
+next:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   0   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 2
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20   0   0   0   0   0   0   0
+next:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20   0   0   0   0   0   0   0
+next:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20   0   0   0   0   0   0   0
+next:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20   0   0   0   0   0   0   0
+next:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2  -1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20   0   0   0   0   0   0   0
+next:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 1
+list->free = 1
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20   0   0   0   0   0   0   0
+next:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20  40   0   0   0   0   0   0
+next:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+prev:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20  40   0   0   0   0   0   0
+next:    2   1   0   0  -1  -1  -1  -1  -1  -1
+prev:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    2   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0  -1  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPush
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153  30  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20  40   0   0   0   0   0   0
+next:    2   1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20  40   0   0   0   0   0   0
+next:    2  -1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3   1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 1
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153  20  40   0   0   0   0   0   0
+next:    2  -1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153-153  40   0   0   0   0   0   0
+next:    2  -1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153-153  40   0   0   0   0   0   0
+next:    3  -1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1   0   2  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153-153  40   0   0   0   0   0   0
+next:    3  -1   3   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1   0   0  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153-153  40   0   0   0   0   0   0
+next:    3  -1  -1   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1   0   0  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+
+func call  = ListPop
+anchor     = 2
+list->free = 3
+list size  = 10
+
+         0   1   2   3   4   5   6   7   8   9
+data: -153-153-153  40   0   0   0   0   0   0
+next:    3  -1  -1   0  -1  -1  -1  -1  -1  -1
+prev:    3  -1  -1   0  -1  -1  -1  -1  -1  -1
+
+<<<<<<<<<<<<<<<<<<<THE END OF DUMP>>>>>>>>>>>>
+

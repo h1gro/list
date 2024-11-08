@@ -17,8 +17,8 @@ all: compile_list clean
 
 #-------------------------------------------------------------------------------------------------------#
 
-compile_list: Main.o PushPop.o Constructor.o ListDump.o
-	g++ Main.o PushPop.o Constructor.o ListDump.o $(flags) -o list
+compile_list: Main.o PushPop.o Constructor.o ListDump.o LinearDump.o GraphDump.o
+	g++ Main.o PushPop.o Constructor.o ListDump.o LinearDump.o GraphDump.o $(flags) -o list
 
 Main.o: Main.cpp
 	g++ -c $(flags) Main.cpp
@@ -32,6 +32,11 @@ Constructor.o: Constructor.cpp
 ListDump.o: ListDump.cpp
 	g++ -c $(flags) ListDump.cpp
 
+LinearDump.o: LinearDump.cpp
+	g++ -c $(flags) LinearDump.cpp
+
+GraphDump.o: GraphDump.cpp
+	g++ -c $(flags) GraphDump.cpp
 #-------------------------------------------------------------------------------------------------------#
 
 clean:
